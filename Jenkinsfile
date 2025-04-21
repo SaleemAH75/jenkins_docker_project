@@ -16,7 +16,7 @@ pipelie{
 
         stage('checkout scm'){
             steps{
-                git branch: 'main' credentialsId: 'github' url:'https://github.com/SaleemAH75/jenkins_docker_project.git'
+                git branch: 'main', credentialsId: 'github', url:'https://github.com/SaleemAH75/jenkins_docker_project.git'
             }
         }
 
