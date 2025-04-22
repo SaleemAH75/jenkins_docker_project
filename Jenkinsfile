@@ -37,7 +37,7 @@ pipeline{
                 scannerHome = tool 'sonar6.2'
             }
             steps{
-                withSonarQubeEnv('My SonarQube Server') {
+                withSonarQubeEnv('sonarserver') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
