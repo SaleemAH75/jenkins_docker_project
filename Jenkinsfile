@@ -31,5 +31,16 @@ pipeline{
                 sh 'mvn test'
             }
         }
+
+        stage('SonarQube analysis'){
+            environment {
+                scannerHome = tool 'sonar6.2'
+            }
+            steps{
+                withSonarQubeEnv('My SonarQube Server') {
+                sh 'mvn clean package sonar:sonar'
+              }
+            }
+        }
     }
 }
